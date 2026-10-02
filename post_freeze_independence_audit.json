@@ -1,0 +1,50 @@
+{
+  "schema": "post-freeze-independence-audit-v1",
+  "status": "PASS",
+  "generated_at_utc": "2026-09-21T19:09:51.734437+00:00",
+  "verification_hash_seeds": [
+    {
+      "seed": "0",
+      "returncode": 0,
+      "normalized_stdout_sha256": "5fb4ebe70b27f94ac32b044dadab4403b7a18bde910d9967fb9e83471e353981"
+    },
+    {
+      "seed": "1",
+      "returncode": 0,
+      "normalized_stdout_sha256": "e5c507e4c3f02300efb6d3b8d6a638d98d3e5be4298e1c9f93eba8c2565ad72b"
+    },
+    {
+      "seed": "777",
+      "returncode": 0,
+      "normalized_stdout_sha256": "d697044fda02177c01c2a89173d10d7405d1a0119aa7816946fece465223ff20"
+    }
+  ],
+  "scientific_payload_unchanged": true,
+  "serialized_instance_files": 6,
+  "hash_partition_counts": {
+    "development": 6,
+    "holdout": 0
+  },
+  "duplicate_serializations_recorded": [],
+  "learned_model_dependencies": [],
+  "coverage": {
+    "available": true,
+    "totals": {
+      "covered_lines": 684,
+      "num_statements": 764,
+      "percent_covered": 86.29191321499013,
+      "percent_covered_display": "86",
+      "missing_lines": 80,
+      "excluded_lines": 0,
+      "percent_statements_covered": 89.52879581151832,
+      "percent_statements_covered_display": "90",
+      "num_branches": 250,
+      "num_partial_branches": 27,
+      "covered_branches": 191,
+      "missing_branches": 59,
+      "percent_branches_covered": 76.4,
+      "percent_branches_covered_display": "76"
+    }
+  },
+  "interpretation": "No model is trained or fitted. Hash partitioning is a regression guard, not a statistical generalization claim; independent oracle, exhaustive finite-universe, metamorphic, differential, and tamper checks address distribution-specific implementation defects."
+}

@@ -1,0 +1,165 @@
+{
+  "case_count": 166,
+  "feasible": 158,
+  "infeasible": 8,
+  "certificate_count": 166,
+  "feasible_certificates": 158,
+  "infeasible_certificates": 8,
+  "oracle_comparisons": 90,
+  "oracle_plans_total": 6400,
+  "oracle_visits_total": 10046,
+  "max_states": 242,
+  "max_edges": 1024,
+  "total_states_across_cases": 13570,
+  "total_edges_across_cases": 46110,
+  "capacity_pairs": 36,
+  "retention_pairs": 36,
+  "interval_pairs": 3,
+  "mutations_rejected": 55,
+  "semantic_differential": {
+    "cases": 166,
+    "states": 13570,
+    "edges": 46110,
+    "max_states_per_case": 242,
+    "transition_sets_equal": true
+  },
+  "identity_example": {
+    "done_mask": 7,
+    "done_nodes": [
+      0,
+      1,
+      2
+    ],
+    "mode": 0,
+    "resident_count": 2,
+    "dirty_count": 1,
+    "alternatives": [
+      {
+        "resident": [
+          "v1",
+          "v2"
+        ],
+        "dirty": [
+          "v1"
+        ],
+        "resident_units": 2,
+        "dirty_units": 1,
+        "continuation_upper": 22
+      },
+      {
+        "resident": [
+          "v1",
+          "v2"
+        ],
+        "dirty": [
+          "v2"
+        ],
+        "resident_units": 2,
+        "dirty_units": 1,
+        "continuation_upper": 30
+      }
+    ],
+    "spread": 8
+  },
+  "footprint_identity_example": {
+    "done_mask": 11,
+    "done_nodes": [
+      0,
+      1,
+      3
+    ],
+    "mode": 1,
+    "resident_count": 1,
+    "dirty_count": 1,
+    "alternatives": [
+      {
+        "resident": [
+          "v0"
+        ],
+        "dirty": [
+          "v0"
+        ],
+        "resident_units": 3,
+        "dirty_units": 3,
+        "continuation_upper": 56
+      },
+      {
+        "resident": [
+          "v3"
+        ],
+        "dirty": [
+          "v3"
+        ],
+        "resident_units": 4,
+        "dirty_units": 4,
+        "continuation_upper": 106
+      }
+    ],
+    "spread": 50
+  },
+  "nonuniform_footprint_cases": 13,
+  "schedule_cases": 12,
+  "schedule_improved_cases": 10,
+  "schedule_max_saved": 108,
+  "schedule_reference": {
+    "case": "schedule-4-1-40",
+    "ready": 102,
+    "fixed": 182,
+    "sealed": 158,
+    "run_order": [
+      0,
+      2,
+      1,
+      3,
+      4
+    ]
+  },
+  "batch_cpu_seconds": 0.6305451659999999,
+  "batch_wall_seconds_sum": 0.6319949389999238,
+  "batch_peak_rss_kib": 100904,
+  "scope": "synthetic finite ready-set action-cost models; not tensor execution, hardware energy, calibrated workload evidence, or scalability evidence",
+  "abstraction_ablation": {
+    "full": {
+      "ambiguous_groups": 0,
+      "cases_with_ambiguity": 0,
+      "max_finite_spread": 0
+    },
+    "without_done": {
+      "ambiguous_groups": 2493,
+      "cases_with_ambiguity": 146,
+      "max_finite_spread": 323
+    },
+    "completion_count_only": {
+      "ambiguous_groups": 482,
+      "cases_with_ambiguity": 49,
+      "max_finite_spread": 105
+    },
+    "without_mode": {
+      "ambiguous_groups": 3517,
+      "cases_with_ambiguity": 135,
+      "max_finite_spread": 76
+    },
+    "without_dirty_identity": {
+      "ambiguous_groups": 153,
+      "cases_with_ambiguity": 16,
+      "max_finite_spread": 32
+    },
+    "without_dirty_state": {
+      "ambiguous_groups": 936,
+      "cases_with_ambiguity": 152,
+      "max_finite_spread": 32
+    },
+    "occupancy_only": {
+      "ambiguous_groups": 661,
+      "cases_with_ambiguity": 44,
+      "max_finite_spread": 50
+    },
+    "footprint_totals_only": {
+      "ambiguous_groups": 591,
+      "cases_with_ambiguity": 35,
+      "max_finite_spread": 14
+    }
+  },
+  "summary_cpu_seconds": 0.8294564759999999,
+  "summary_peak_rss_kib": 101680
+}

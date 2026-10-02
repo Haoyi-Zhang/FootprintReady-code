@@ -1,0 +1,7 @@
+{
+  "cases": 166,
+  "states": 13570,
+  "edges": 46110,
+  "max_states_per_case": 242,
+  "transition_sets_equal": true
+}

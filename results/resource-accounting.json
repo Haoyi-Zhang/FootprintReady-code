@@ -1,0 +1,43 @@
+{
+  "scope": "observed resource use for the shipped finite synthetic checks; not a performance or scalability claim",
+  "campaign_limits": {
+    "cpu_cores": 4,
+    "memory_gib": 4,
+    "swap_allowed": false,
+    "gpu_or_external_compute": false,
+    "individual_run_minutes": 45,
+    "campaign_cpu_hours": 8
+  },
+  "execution_policy": {
+    "workers": 1,
+    "dependencies": "Python standard library for scientific artifact",
+    "network_used_by_experiments": false,
+    "private_data_used": false
+  },
+  "archived_validation_batch": {
+    "cases": 166,
+    "instrumented_cpu_seconds": 0.6305451659999999,
+    "instrumented_wall_seconds_sum": 0.6319949389999238,
+    "peak_rss_kib": 100904
+  },
+  "archived_summary_analysis": {
+    "cpu_seconds": 0.8294564759999999,
+    "peak_rss_kib": 101680
+  },
+  "archived_exhaustive_audit": {
+    "cases": 7290,
+    "states": 120376,
+    "edges": 320796,
+    "observed_wall_seconds": 3.618624354000076
+  },
+  "fresh_reproduction": {
+    "workers": 1,
+    "child_cpu_seconds": 13.804934000000001,
+    "child_peak_rss_kib": 175276,
+    "wall_seconds": 10.935702888999913,
+    "deterministic_results_equal": true,
+    "compared_result_files": 18,
+    "compared_batch_certificates": 166,
+    "timing_policy": "CPU, wall-time, and RSS fields are observational and excluded from equality; all scientific fields and certificate objects are compared"
+  }
+}

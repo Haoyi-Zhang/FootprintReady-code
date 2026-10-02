@@ -1,0 +1,93 @@
+{
+  "workers": 1,
+  "cases": [
+    {
+      "case": "boundary-flush",
+      "accepted": true,
+      "status": "feasible",
+      "upper": 52,
+      "lower": 52,
+      "states": 11,
+      "edges": 20,
+      "fixed_order_upper": 52,
+      "sealed_upper": 52,
+      "oracle_upper": 52,
+      "oracle_branch_visits": 3,
+      "oracle_complete_plans": 1,
+      "wall_seconds": 0.0011017459996764956,
+      "cpu_seconds": 0.0011027609999999521
+    },
+    {
+      "case": "boundary-retain",
+      "accepted": true,
+      "status": "feasible",
+      "upper": 38,
+      "lower": 38,
+      "states": 14,
+      "edges": 27,
+      "fixed_order_upper": 38,
+      "sealed_upper": 52,
+      "oracle_upper": 38,
+      "oracle_branch_visits": 3,
+      "oracle_complete_plans": 1,
+      "wall_seconds": 0.000932401999762078,
+      "cpu_seconds": 0.0009190579999999171
+    },
+    {
+      "case": "pilot-fork-join",
+      "accepted": true,
+      "status": "feasible",
+      "upper": 115,
+      "lower": 115,
+      "states": 57,
+      "edges": 179,
+      "fixed_order_upper": 129,
+      "sealed_upper": 129,
+      "oracle_upper": 115,
+      "oracle_branch_visits": 9,
+      "oracle_complete_plans": 2,
+      "wall_seconds": 0.002673149000202102,
+      "cpu_seconds": 0.0026661190000000223
+    },
+    {
+      "case": "schedule-4-1-40",
+      "accepted": true,
+      "status": "feasible",
+      "upper": 102,
+      "lower": 102,
+      "states": 132,
+      "edges": 444,
+      "fixed_order_upper": 182,
+      "sealed_upper": 158,
+      "oracle_upper": 102,
+      "oracle_branch_visits": 129,
+      "oracle_complete_plans": 68,
+      "wall_seconds": 0.004839225000068836,
+      "cpu_seconds": 0.004832534999999916
+    },
+    {
+      "case": "footprint-identity",
+      "accepted": true,
+      "status": "feasible",
+      "upper": 97,
+      "lower": 97,
+      "states": 130,
+      "edges": 426,
+      "fixed_order_upper": 97,
+      "sealed_upper": 237,
+      "oracle_upper": 97,
+      "oracle_branch_visits": 89,
+      "oracle_complete_plans": 44,
+      "wall_seconds": 0.004623952000201825,
+      "cpu_seconds": 0.004616314000000066
+    }
+  ],
+  "dirty_flush_negative_control": {
+    "rejected": true,
+    "reason": "illegal action ['switch', 1] at done mask 1"
+  },
+  "wall_seconds": 0.014793991999795253,
+  "cpu_seconds": 0.014753875000000027,
+  "peak_rss_kib": 93356,
+  "scope": "abstract finite graph checking only; no tensor execution or physical energy measurement"
+}

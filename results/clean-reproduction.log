@@ -1,0 +1,164 @@
+Environment: Linux x86_64; CPython 3.13.5; Unix resource module available.
+$ python -m unittest discover -s tests -v
+test_mutations_and_metamorphisms (test_certificates.CertificateMutationTests.test_mutations_and_metamorphisms) ... ok
+test_half_unit_operator_interval_is_outside_executable_domain (test_declared_domains.DeclaredDomainTests.test_half_unit_operator_interval_is_outside_executable_domain) ... ok
+test_three_mode_home_sealed_guard_preserves_indirect_switch_risk (test_declared_domains.DeclaredDomainTests.test_three_mode_home_sealed_guard_preserves_indirect_switch_risk) ... ok
+test_fresh_output_must_fit_with_current_residents (test_footprints.FootprintSemanticsTests.test_fresh_output_must_fit_with_current_residents) ... ok
+test_retaining_switch_obeys_target_weighted_capacity (test_footprints.FootprintSemanticsTests.test_retaining_switch_obeys_target_weighted_capacity) ... ok
+test_transfer_and_operator_events_scale_in_units (test_footprints.FootprintSemanticsTests.test_transfer_and_operator_events_scale_in_units) ... ok
+test_all_frozen_reachable_states_and_edges (test_semantics.SemanticDifferentialTests.test_all_frozen_reachable_states_and_edges) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.439s
+
+OK
+
+$ python verify_bibliography.py
+{'references': 67, 'unique_keys': 67, 'unique_titles': 67, 'unique_stable_locators': 67, 'doi_locators': 49, 'arxiv_locators': 13, 'official_or_other_locators': 5, 'all_marked_cited': True, 'source_bytes_redistributed': False, 'pinned_first_party_records': ['glow', 'piperench', 'tiramisu'], 'offline_gate_not_live_source_verification': True}
+
+$ python verify.py
+{
+  "accepted_certificates": 166,
+  "accepted_feasible": 158,
+  "accepted_infeasible": 8,
+  "cpu_seconds": 0.248378997,
+  "peak_rss_kib": 97072,
+  "bibliography_audit": {
+    "references": 67,
+    "unique_keys": 67,
+    "unique_titles": 67,
+    "unique_stable_locators": 67,
+    "doi_locators": 49,
+    "arxiv_locators": 13,
+    "official_or_other_locators": 5,
+    "all_marked_cited": true,
+    "source_bytes_redistributed": false,
+    "pinned_first_party_records": [
+      "glow",
+      "piperench",
+      "tiramisu"
+    ],
+    "offline_gate_not_live_source_verification": true
+  }
+}
+
+$ python reproduce.py --out <fresh-directory>
+{
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.0669271420001678
+    },
+    {
+      "command": [
+        "python",
+        "verify_bibliography.py"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.6187160380000023
+    },
+    {
+      "command": [
+        "python",
+        "freeze_inputs.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.568032076999998
+    },
+    {
+      "command": [
+        "python",
+        "pilot.py",
+        "--out",
+        "<fresh-output>"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.5680226130000392
+    },
+    {
+      "command": [
+        "python",
+        "run.py",
+        "--out",
+        "<fresh-output>",
+        "--start",
+        "0",
+        "--stop",
+        "64"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.7184814979998464
+    },
+    {
+      "command": [
+        "python",
+        "run.py",
+        "--out",
+        "<fresh-output>",
+        "--start",
+        "64",
+        "--stop",
+        "166"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.1187228900000719
+    },
+    {
+      "command": [
+        "python",
+        "summarize.py",
+        "--out",
+        "<fresh-output>"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.3705804879998595
+    },
+    {
+      "command": [
+        "python",
+        "exhaustive_audit.py",
+        "--out",
+        "<fresh-output>/exhaustive-audit.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 4.880081639000082
+    }
+  ],
+  "deterministic_results_equal": true,
+  "compared_result_files": [
+    "chunk-0-64.json",
+    "chunk-64-166.json",
+    "summary.json",
+    "mutations.json",
+    "abstraction-ablation.json",
+    "semantic-differential.json",
+    "exhaustive-audit.json",
+    "pilot.json",
+    "family-costs.csv",
+    "interval-costs.csv",
+    "schedule-costs.csv",
+    "abstraction-ablation.csv",
+    "footprint-costs.csv",
+    "boundary-flush-certificate.json",
+    "boundary-retain-certificate.json",
+    "pilot-fork-join-certificate.json",
+    "schedule-4-1-40-certificate.json",
+    "footprint-identity-certificate.json"
+  ],
+  "compared_certificates": 166,
+  "workers": 1,
+  "child_cpu_seconds": 13.804934000000001,
+  "child_peak_rss_kib": 175276,
+  "wall_seconds": 10.935702888999913,
+  "timing_policy": "CPU, wall-time, and RSS fields are observational and excluded from equality; all scientific fields and certificate objects are compared"
+}
