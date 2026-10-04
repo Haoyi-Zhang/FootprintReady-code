@@ -198,5 +198,4 @@ Independent novelty, proof, hardware, authorship, and submission review remain
 external obligations.
 
 The repository's original code and generated inputs are offered under `LICENSE`.
-Cited literature is not redistributed.  Substantive AI assistance was used in
-formulation, proof drafting, code, finite checking, and manuscript preparation.
+Cited literature is not redistributed.
