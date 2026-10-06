@@ -1,0 +1,81 @@
+{
+  "universe": {
+    "inputs": [
+      "x",
+      "w"
+    ],
+    "nodes": 2,
+    "node_argument_rule": "all unary choices and binary multisets over values available at declaration",
+    "mode_permissions_per_node": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "uniform_capacities": [
+      2,
+      3,
+      4
+    ],
+    "cross_mode_retention": [
+      false,
+      true
+    ],
+    "configuration_upper": 9,
+    "footprint_assignments_x_w_v0_v1": [
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        2,
+        1
+      ],
+      [
+        2,
+        1,
+        1,
+        3
+      ]
+    ]
+  },
+  "cases": 7290,
+  "feasible": 3204,
+  "infeasible": 4086,
+  "states": 120376,
+  "edges": 320796,
+  "max_states_per_case": 46,
+  "max_edges_per_case": 160,
+  "oracle_branch_visits": 27570,
+  "oracle_complete_plans": 10344,
+  "producer_checker_oracle_agree": true,
+  "by_footprint_assignment": {
+    "0": {
+      "cases": 2430,
+      "feasible": 2052,
+      "infeasible": 378
+    },
+    "1": {
+      "cases": 2430,
+      "feasible": 792,
+      "infeasible": 1638
+    },
+    "2": {
+      "cases": 2430,
+      "feasible": 360,
+      "infeasible": 2070
+    }
+  },
+  "wall_seconds": 5.5566829039999845,
+  "timing_policy": "observational only; excluded from deterministic reproduction equality"
+}

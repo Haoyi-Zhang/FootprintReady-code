@@ -1,0 +1,282 @@
+{
+  "mutations": [
+    {
+      "name": "understated_upper",
+      "rejected": true,
+      "reason": "trace cost"
+    },
+    {
+      "name": "overstated_lower",
+      "rejected": true,
+      "reason": "trace cost"
+    },
+    {
+      "name": "missing_count",
+      "rejected": true,
+      "reason": "count schema"
+    },
+    {
+      "name": "forged_count",
+      "rejected": true,
+      "reason": "event counts"
+    },
+    {
+      "name": "boolean_count",
+      "rejected": true,
+      "reason": "count schema"
+    },
+    {
+      "name": "negative_count",
+      "rejected": true,
+      "reason": "count schema"
+    },
+    {
+      "name": "omitted_successor",
+      "rejected": true,
+      "reason": "successor closure"
+    },
+    {
+      "name": "omitted_source",
+      "rejected": true,
+      "reason": "missing source"
+    },
+    {
+      "name": "duplicate_state",
+      "rejected": true,
+      "reason": "duplicate state"
+    },
+    {
+      "name": "extraneous_unreachable_goal",
+      "rejected": true,
+      "reason": "extraneous source-unreachable state"
+    },
+    {
+      "name": "dependency_open_completed_set",
+      "rejected": true,
+      "reason": "dependency-closed completed set"
+    },
+    {
+      "name": "future_resident",
+      "rejected": true,
+      "reason": "state invariant"
+    },
+    {
+      "name": "dirty_not_resident",
+      "rejected": true,
+      "reason": "state invariant"
+    },
+    {
+      "name": "boolean_mask",
+      "rejected": true,
+      "reason": "state mask"
+    },
+    {
+      "name": "negative_potential",
+      "rejected": true,
+      "reason": "potential domain"
+    },
+    {
+      "name": "source_declared_dead",
+      "rejected": true,
+      "reason": "dead state reaches finite state"
+    },
+    {
+      "name": "inflated_potential",
+      "rejected": true,
+      "reason": "Bellman lower-bound inequality"
+    },
+    {
+      "name": "nonzero_goal_potential",
+      "rejected": true,
+      "reason": "goal potential"
+    },
+    {
+      "name": "missing_terminal_store",
+      "rejected": true,
+      "reason": "trace does not finish with backed outputs"
+    },
+    {
+      "name": "unknown_action",
+      "rejected": true,
+      "reason": "memory action"
+    },
+    {
+      "name": "boolean_switch",
+      "rejected": true,
+      "reason": "switch target"
+    },
+    {
+      "name": "invalid_run_node",
+      "rejected": true,
+      "reason": "run action"
+    },
+    {
+      "name": "changed_model_cost",
+      "rejected": true,
+      "reason": "instance binding"
+    },
+    {
+      "name": "changed_model_footprint",
+      "rejected": true,
+      "reason": "instance binding"
+    },
+    {
+      "name": "changed_model_retention",
+      "rejected": true,
+      "reason": "instance binding"
+    },
+    {
+      "name": "numeric_boolean_binding",
+      "rejected": true,
+      "reason": "instance binding"
+    },
+    {
+      "name": "unknown_certificate_field",
+      "rejected": true,
+      "reason": "certificate schema"
+    },
+    {
+      "name": "empty_state_certificate",
+      "rejected": true,
+      "reason": "certificate state ceiling"
+    },
+    {
+      "name": "wrong_trace_type",
+      "rejected": true,
+      "reason": "trace ceiling"
+    },
+    {
+      "name": "wrong_state_type",
+      "rejected": true,
+      "reason": "certificate state ceiling"
+    },
+    {
+      "name": "malformed_record",
+      "rejected": true,
+      "reason": "state record"
+    },
+    {
+      "name": "noninteger_potential",
+      "rejected": true,
+      "reason": "potential domain"
+    },
+    {
+      "name": "feasible_status_flip",
+      "rejected": true,
+      "reason": "certificate schema"
+    },
+    {
+      "name": "missing_status",
+      "rejected": true,
+      "reason": "certificate status"
+    },
+    {
+      "name": "unknown_status",
+      "rejected": true,
+      "reason": "certificate status"
+    },
+    {
+      "name": "missing_footprint_value",
+      "rejected": true,
+      "reason": "value footprint"
+    },
+    {
+      "name": "extra_footprint_value",
+      "rejected": true,
+      "reason": "value footprint"
+    },
+    {
+      "name": "boolean_footprint",
+      "rejected": true,
+      "reason": "value footprint"
+    },
+    {
+      "name": "oversized_footprint",
+      "rejected": true,
+      "reason": "value footprint"
+    },
+    {
+      "name": "zero_capacity",
+      "rejected": true,
+      "reason": "capacity"
+    },
+    {
+      "name": "duplicate_json_key",
+      "rejected": true,
+      "reason": "duplicate JSON key"
+    },
+    {
+      "name": "nonfinite_json",
+      "rejected": true,
+      "reason": "non-finite JSON constant"
+    },
+    {
+      "name": "dirty_flush",
+      "rejected": true,
+      "reason": "illegal action ['switch', 1] at done mask 1"
+    },
+    {
+      "name": "infeasible_source_finite",
+      "rejected": true,
+      "reason": "dead state reaches finite state"
+    },
+    {
+      "name": "infeasible_omitted_successor",
+      "rejected": true,
+      "reason": "successor closure"
+    },
+    {
+      "name": "infeasible_omitted_source",
+      "rejected": true,
+      "reason": "missing source"
+    },
+    {
+      "name": "infeasible_duplicate_state",
+      "rejected": true,
+      "reason": "duplicate state"
+    },
+    {
+      "name": "infeasible_unknown_field",
+      "rejected": true,
+      "reason": "certificate schema"
+    },
+    {
+      "name": "infeasible_status_flip",
+      "rejected": true,
+      "reason": "certificate schema"
+    },
+    {
+      "name": "infeasible_wrong_state_type",
+      "rejected": true,
+      "reason": "certificate state ceiling"
+    },
+    {
+      "name": "infeasible_malformed_record",
+      "rejected": true,
+      "reason": "state record"
+    },
+    {
+      "name": "infeasible_noninteger_potential",
+      "rejected": true,
+      "reason": "potential domain"
+    },
+    {
+      "name": "infeasible_changed_instance",
+      "rejected": true,
+      "reason": "instance binding"
+    },
+    {
+      "name": "infeasible_dead_reaches_finite",
+      "rejected": true,
+      "reason": "dead state reaches finite state"
+    },
+    {
+      "name": "infeasible_added_trace",
+      "rejected": true,
+      "reason": "certificate schema"
+    }
+  ],
+  "mutations_rejected": 55,
+  "rename_invariant": true,
+  "topological_relisting_invariant": true
+}

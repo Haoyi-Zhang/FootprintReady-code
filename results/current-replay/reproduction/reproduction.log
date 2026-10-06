@@ -1,0 +1,523 @@
+test_cache_values_do_not_cross_instance_boundaries (test_cache_lifetime.InstanceCacheTests.test_cache_values_do_not_cross_instance_boundaries) ... ok
+test_completed_instances_are_collectible (test_cache_lifetime.InstanceCacheTests.test_completed_instances_are_collectible) ... ok
+test_mutations_and_metamorphisms (test_certificates.CertificateMutationTests.test_mutations_and_metamorphisms) ... ok
+test_half_unit_operator_interval_is_outside_executable_domain (test_declared_domains.DeclaredDomainTests.test_half_unit_operator_interval_is_outside_executable_domain) ... ok
+test_three_mode_home_sealed_guard_preserves_indirect_switch_risk (test_declared_domains.DeclaredDomainTests.test_three_mode_home_sealed_guard_preserves_indirect_switch_risk) ... ok
+test_tile_dimensions_have_the_same_integer_domain_in_both_parsers (test_declared_domains.DeclaredDomainTests.test_tile_dimensions_have_the_same_integer_domain_in_both_parsers) ... ok
+test_fresh_output_must_fit_with_current_residents (test_footprints.FootprintSemanticsTests.test_fresh_output_must_fit_with_current_residents) ... ok
+test_retaining_switch_obeys_target_weighted_capacity (test_footprints.FootprintSemanticsTests.test_retaining_switch_obeys_target_weighted_capacity) ... ok
+test_transfer_and_operator_events_scale_in_units (test_footprints.FootprintSemanticsTests.test_transfer_and_operator_events_scale_in_units) ... ok
+test_exact_bytes_pass_and_newline_changes_fail (test_frozen_bytes.FrozenBytesTests.test_exact_bytes_pass_and_newline_changes_fail) ... ok
+test_all_frozen_reachable_states_and_edges (test_semantics.SemanticDifferentialTests.test_all_frozen_reachable_states_and_edges) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.929s
+
+OK
+{'references': 67, 'unique_keys': 67, 'unique_titles': 67, 'unique_stable_locators': 67, 'doi_locators': 49, 'arxiv_locators': 13, 'official_or_other_locators': 5, 'all_marked_cited': True, 'source_bytes_redistributed': False, 'pinned_first_party_records': ['glow', 'piperench', 'tiramisu'], 'offline_gate_not_live_source_verification': True}
+verified 166 frozen cases
+{
+  "workers": 1,
+  "cases": [
+    {
+      "case": "boundary-flush",
+      "accepted": true,
+      "status": "feasible",
+      "upper": 52,
+      "lower": 52,
+      "states": 11,
+      "edges": 20,
+      "fixed_order_upper": 52,
+      "sealed_upper": 52,
+      "oracle_upper": 52,
+      "oracle_branch_visits": 3,
+      "oracle_complete_plans": 1,
+      "wall_seconds": 0.0017598550000172963,
+      "cpu_seconds": 0.001000525000000002
+    },
+    {
+      "case": "boundary-retain",
+      "accepted": true,
+      "status": "feasible",
+      "upper": 38,
+      "lower": 38,
+      "states": 14,
+      "edges": 27,
+      "fixed_order_upper": 38,
+      "sealed_upper": 52,
+      "oracle_upper": 38,
+      "oracle_branch_visits": 3,
+      "oracle_complete_plans": 1,
+      "wall_seconds": 0.0015826249999975062,
+      "cpu_seconds": 0.0009987820000000036
+    },
+    {
+      "case": "pilot-fork-join",
+      "accepted": true,
+      "status": "feasible",
+      "upper": 115,
+      "lower": 115,
+      "states": 57,
+      "edges": 179,
+      "fixed_order_upper": 129,
+      "sealed_upper": 129,
+      "oracle_upper": 115,
+      "oracle_branch_visits": 9,
+      "oracle_complete_plans": 2,
+      "wall_seconds": 0.004252895000007584,
+      "cpu_seconds": 0.003997934000000002
+    },
+    {
+      "case": "schedule-4-1-40",
+      "accepted": true,
+      "status": "feasible",
+      "upper": 102,
+      "lower": 102,
+      "states": 132,
+      "edges": 444,
+      "fixed_order_upper": 182,
+      "sealed_upper": 158,
+      "oracle_upper": 102,
+      "oracle_branch_visits": 129,
+      "oracle_complete_plans": 68,
+      "wall_seconds": 0.008623037999996086,
+      "cpu_seconds": 0.007998552999999992
+    },
+    {
+      "case": "footprint-identity",
+      "accepted": true,
+      "status": "feasible",
+      "upper": 97,
+      "lower": 97,
+      "states": 130,
+      "edges": 426,
+      "fixed_order_upper": 97,
+      "sealed_upper": 237,
+      "oracle_upper": 97,
+      "oracle_branch_visits": 89,
+      "oracle_complete_plans": 44,
+      "wall_seconds": 0.007610774999989189,
+      "cpu_seconds": 0.007998784000000009
+    }
+  ],
+  "dirty_flush_negative_control": {
+    "rejected": true,
+    "reason": "illegal action ['switch', 1] at done mask 1"
+  },
+  "wall_seconds": 0.024820905000012772,
+  "cpu_seconds": 0.024995644000000004,
+  "peak_rss_kib": 16812,
+  "scope": "abstract finite graph checking only; no tensor execution or physical energy measurement"
+}
+000 small-00-2-0: feasible states=1 upper=0
+001 small-00-2-1: feasible states=1 upper=0
+002 small-00-3-0: feasible states=1 upper=0
+003 small-00-3-1: feasible states=1 upper=0
+004 small-00-4-0: feasible states=1 upper=0
+005 small-00-4-1: feasible states=1 upper=0
+006 small-01-2-0: feasible states=8 upper=24
+007 small-01-2-1: feasible states=8 upper=24
+008 small-01-3-0: feasible states=8 upper=24
+009 small-01-3-1: feasible states=8 upper=24
+010 small-01-4-0: feasible states=8 upper=24
+011 small-01-4-1: feasible states=8 upper=24
+012 small-02-2-0: feasible states=14 upper=33
+013 small-02-2-1: feasible states=14 upper=33
+014 small-02-3-0: feasible states=14 upper=33
+015 small-02-3-1: feasible states=14 upper=33
+016 small-02-4-0: feasible states=14 upper=33
+017 small-02-4-1: feasible states=14 upper=33
+018 small-03-2-0: infeasible states=44 upper=None
+019 small-03-2-1: infeasible states=44 upper=None
+020 small-03-3-0: feasible states=50 upper=41
+021 small-03-3-1: feasible states=50 upper=41
+022 small-03-4-0: feasible states=50 upper=41
+023 small-03-4-1: feasible states=50 upper=41
+024 small-04-2-0: infeasible states=8 upper=None
+025 small-04-2-1: infeasible states=8 upper=None
+026 small-04-3-0: feasible states=24 upper=34
+027 small-04-3-1: feasible states=24 upper=34
+028 small-04-4-0: feasible states=24 upper=34
+029 small-04-4-1: feasible states=24 upper=34
+030 small-05-2-0: feasible states=14 upper=31
+031 small-05-2-1: feasible states=14 upper=31
+032 small-05-3-0: feasible states=14 upper=31
+033 small-05-3-1: feasible states=14 upper=31
+034 small-05-4-0: feasible states=14 upper=31
+035 small-05-4-1: feasible states=14 upper=31
+036 small-06-2-0: infeasible states=28 upper=None
+037 small-06-2-1: infeasible states=28 upper=None
+038 small-06-3-0: feasible states=72 upper=54
+039 small-06-3-1: feasible states=72 upper=54
+040 small-06-4-0: feasible states=72 upper=54
+041 small-06-4-1: feasible states=72 upper=54
+042 small-07-2-0: infeasible states=28 upper=None
+043 small-07-2-1: infeasible states=28 upper=None
+044 small-07-3-0: feasible states=38 upper=50
+045 small-07-3-1: feasible states=38 upper=50
+046 small-07-4-0: feasible states=38 upper=50
+047 small-07-4-1: feasible states=38 upper=50
+048 chain-3-0-0: feasible states=38 upper=44
+049 chain-3-0-9: feasible states=38 upper=53
+050 chain-3-0-40: feasible states=38 upper=74
+051 chain-3-1-0: feasible states=38 upper=44
+052 chain-3-1-9: feasible states=38 upper=53
+053 chain-3-1-40: feasible states=38 upper=74
+054 chain-4-0-0: feasible states=38 upper=44
+055 chain-4-0-9: feasible states=38 upper=53
+056 chain-4-0-40: feasible states=38 upper=74
+057 chain-4-1-0: feasible states=38 upper=44
+058 chain-4-1-9: feasible states=38 upper=53
+059 chain-4-1-40: feasible states=38 upper=74
+060 diamond-3-0-0: feasible states=110 upper=58
+061 diamond-3-0-9: feasible states=110 upper=67
+062 diamond-3-0-40: feasible states=110 upper=68
+063 diamond-3-1-0: feasible states=110 upper=48
+064 diamond-3-1-9: feasible states=110 upper=67
+065 diamond-3-1-40: feasible states=110 upper=68
+066 diamond-4-0-0: feasible states=110 upper=58
+067 diamond-4-0-9: feasible states=110 upper=67
+068 diamond-4-0-40: feasible states=110 upper=68
+069 diamond-4-1-0: feasible states=110 upper=48
+070 diamond-4-1-9: feasible states=110 upper=67
+071 diamond-4-1-40: feasible states=110 upper=68
+072 residual-3-0-0: feasible states=62 upper=58
+073 residual-3-0-9: feasible states=62 upper=67
+074 residual-3-0-40: feasible states=62 upper=68
+075 residual-3-1-0: feasible states=62 upper=48
+076 residual-3-1-9: feasible states=62 upper=67
+077 residual-3-1-40: feasible states=62 upper=68
+078 residual-4-0-0: feasible states=62 upper=58
+079 residual-4-0-9: feasible states=62 upper=67
+080 residual-4-0-40: feasible states=62 upper=68
+081 residual-4-1-0: feasible states=62 upper=48
+082 residual-4-1-9: feasible states=62 upper=67
+083 residual-4-1-40: feasible states=62 upper=68
+084 shared-3-0-0: feasible states=72 upper=68
+085 shared-3-0-9: feasible states=72 upper=68
+086 shared-3-0-40: feasible states=72 upper=68
+087 shared-3-1-0: feasible states=72 upper=58
+088 shared-3-1-9: feasible states=72 upper=68
+089 shared-3-1-40: feasible states=72 upper=68
+090 shared-4-0-0: feasible states=72 upper=68
+091 shared-4-0-9: feasible states=72 upper=68
+092 shared-4-0-40: feasible states=72 upper=68
+093 shared-4-1-0: feasible states=72 upper=58
+094 shared-4-1-9: feasible states=72 upper=68
+095 shared-4-1-40: feasible states=72 upper=68
+096 wide-3-0-0: feasible states=240 upper=64
+097 wide-3-0-9: feasible states=240 upper=73
+098 wide-3-0-40: feasible states=240 upper=74
+099 wide-3-1-0: feasible states=240 upper=54
+100 wide-3-1-9: feasible states=240 upper=73
+101 wide-3-1-40: feasible states=240 upper=74
+102 wide-4-0-0: feasible states=242 upper=58
+103 wide-4-0-9: feasible states=242 upper=67
+104 wide-4-0-40: feasible states=242 upper=68
+105 wide-4-1-0: feasible states=242 upper=48
+106 wide-4-1-9: feasible states=242 upper=67
+107 wide-4-1-40: feasible states=242 upper=68
+108 fanin-3-0-0: feasible states=116 upper=92
+109 fanin-3-0-9: feasible states=116 upper=97
+110 fanin-3-0-40: feasible states=116 upper=97
+111 fanin-3-1-0: feasible states=116 upper=82
+112 fanin-3-1-9: feasible states=116 upper=91
+113 fanin-3-1-40: feasible states=116 upper=97
+114 fanin-4-0-0: feasible states=120 upper=82
+115 fanin-4-0-9: feasible states=120 upper=83
+116 fanin-4-0-40: feasible states=120 upper=83
+117 fanin-4-1-0: feasible states=120 upper=68
+118 fanin-4-1-9: feasible states=120 upper=77
+119 fanin-4-1-40: feasible states=120 upper=83
+120 interval-0: feasible states=110 upper=67
+121 interval-1: feasible states=110 upper=92
+122 interval-3: feasible states=110 upper=140
+123 interval-7: feasible states=110 upper=236
+124 random-00: feasible states=190 upper=51
+125 random-01: feasible states=68 upper=45
+126 random-02: feasible states=186 upper=51
+127 random-03: feasible states=186 upper=44
+128 random-04: feasible states=132 upper=56
+129 random-05: feasible states=120 upper=51
+130 random-06: feasible states=112 upper=45
+131 random-07: feasible states=84 upper=48
+132 random-08: feasible states=194 upper=51
+133 random-09: feasible states=208 upper=46
+134 random-10: feasible states=84 upper=56
+135 random-11: feasible states=62 upper=54
+136 random-12: feasible states=128 upper=45
+137 random-13: feasible states=160 upper=53
+138 random-14: feasible states=120 upper=57
+139 random-15: feasible states=100 upper=36
+140 schedule-3-0-0: feasible states=100 upper=71
+141 schedule-3-0-9: feasible states=100 upper=85
+142 schedule-3-0-40: feasible states=100 upper=116
+143 schedule-3-1-0: feasible states=132 upper=57
+144 schedule-3-1-9: feasible states=132 upper=71
+145 schedule-3-1-40: feasible states=132 upper=102
+146 schedule-4-0-0: feasible states=100 upper=71
+147 schedule-4-0-9: feasible states=100 upper=85
+148 schedule-4-0-40: feasible states=100 upper=116
+149 schedule-4-1-0: feasible states=132 upper=57
+150 schedule-4-1-9: feasible states=132 upper=71
+151 schedule-4-1-40: feasible states=132 upper=102
+152 dirty-identity: feasible states=124 upper=81
+153 footprint-chain-0-9: feasible states=21 upper=168
+154 footprint-chain-0-40: feasible states=21 upper=261
+155 footprint-chain-1-9: feasible states=26 upper=84
+156 footprint-chain-1-40: feasible states=26 upper=177
+157 footprint-diamond-0-9: feasible states=47 upper=152
+158 footprint-diamond-0-40: feasible states=47 upper=245
+159 footprint-diamond-1-9: feasible states=60 upper=96
+160 footprint-diamond-1-40: feasible states=60 upper=189
+161 footprint-shared-0-9: feasible states=40 upper=241
+162 footprint-shared-0-40: feasible states=40 upper=334
+163 footprint-shared-1-9: feasible states=48 upper=121
+164 footprint-shared-1-40: feasible states=48 upper=214
+165 footprint-identity: feasible states=130 upper=97
+{
+  "case_count": 166,
+  "feasible": 158,
+  "infeasible": 8,
+  "certificate_count": 166,
+  "feasible_certificates": 158,
+  "infeasible_certificates": 8,
+  "oracle_comparisons": 90,
+  "oracle_plans_total": 6400,
+  "oracle_visits_total": 10046,
+  "max_states": 242,
+  "max_edges": 1024,
+  "total_states_across_cases": 13570,
+  "total_edges_across_cases": 46110,
+  "capacity_pairs": 36,
+  "retention_pairs": 36,
+  "interval_pairs": 3,
+  "mutations_rejected": 55,
+  "semantic_differential": {
+    "cases": 166,
+    "states": 13570,
+    "edges": 46110,
+    "max_states_per_case": 242,
+    "transition_sets_equal": true
+  },
+  "identity_example": {
+    "done_mask": 7,
+    "done_nodes": [
+      0,
+      1,
+      2
+    ],
+    "mode": 0,
+    "resident_count": 2,
+    "dirty_count": 1,
+    "alternatives": [
+      {
+        "resident": [
+          "v1",
+          "v2"
+        ],
+        "dirty": [
+          "v1"
+        ],
+        "resident_units": 2,
+        "dirty_units": 1,
+        "continuation_upper": 22
+      },
+      {
+        "resident": [
+          "v1",
+          "v2"
+        ],
+        "dirty": [
+          "v2"
+        ],
+        "resident_units": 2,
+        "dirty_units": 1,
+        "continuation_upper": 30
+      }
+    ],
+    "spread": 8
+  },
+  "footprint_identity_example": {
+    "done_mask": 11,
+    "done_nodes": [
+      0,
+      1,
+      3
+    ],
+    "mode": 1,
+    "resident_count": 1,
+    "dirty_count": 1,
+    "alternatives": [
+      {
+        "resident": [
+          "v0"
+        ],
+        "dirty": [
+          "v0"
+        ],
+        "resident_units": 3,
+        "dirty_units": 3,
+        "continuation_upper": 56
+      },
+      {
+        "resident": [
+          "v3"
+        ],
+        "dirty": [
+          "v3"
+        ],
+        "resident_units": 4,
+        "dirty_units": 4,
+        "continuation_upper": 106
+      }
+    ],
+    "spread": 50
+  },
+  "nonuniform_footprint_cases": 13,
+  "schedule_cases": 12,
+  "schedule_improved_cases": 10,
+  "schedule_max_saved": 108,
+  "schedule_reference": {
+    "case": "schedule-4-1-40",
+    "ready": 102,
+    "fixed": 182,
+    "sealed": 158,
+    "run_order": [
+      0,
+      2,
+      1,
+      3,
+      4
+    ]
+  },
+  "batch_cpu_seconds": 0.929931897,
+  "batch_wall_seconds_sum": 0.9289700650000157,
+  "batch_peak_rss_kib": 18072,
+  "scope": "synthetic finite ready-set action-cost models; not tensor execution, hardware energy, calibrated workload evidence, or scalability evidence",
+  "abstraction_ablation": {
+    "full": {
+      "ambiguous_groups": 0,
+      "cases_with_ambiguity": 0,
+      "max_finite_spread": 0
+    },
+    "without_done": {
+      "ambiguous_groups": 2493,
+      "cases_with_ambiguity": 146,
+      "max_finite_spread": 323
+    },
+    "completion_count_only": {
+      "ambiguous_groups": 482,
+      "cases_with_ambiguity": 49,
+      "max_finite_spread": 105
+    },
+    "without_mode": {
+      "ambiguous_groups": 3517,
+      "cases_with_ambiguity": 135,
+      "max_finite_spread": 76
+    },
+    "without_dirty_identity": {
+      "ambiguous_groups": 153,
+      "cases_with_ambiguity": 16,
+      "max_finite_spread": 32
+    },
+    "without_dirty_state": {
+      "ambiguous_groups": 936,
+      "cases_with_ambiguity": 152,
+      "max_finite_spread": 32
+    },
+    "occupancy_only": {
+      "ambiguous_groups": 661,
+      "cases_with_ambiguity": 44,
+      "max_finite_spread": 50
+    },
+    "footprint_totals_only": {
+      "ambiguous_groups": 591,
+      "cases_with_ambiguity": 35,
+      "max_finite_spread": 14
+    }
+  },
+  "summary_cpu_seconds": 1.3715123070000002,
+  "summary_peak_rss_kib": 20884
+}
+{
+  "universe": {
+    "inputs": [
+      "x",
+      "w"
+    ],
+    "nodes": 2,
+    "node_argument_rule": "all unary choices and binary multisets over values available at declaration",
+    "mode_permissions_per_node": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "uniform_capacities": [
+      2,
+      3,
+      4
+    ],
+    "cross_mode_retention": [
+      false,
+      true
+    ],
+    "configuration_upper": 9,
+    "footprint_assignments_x_w_v0_v1": [
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        2,
+        2,
+        1
+      ],
+      [
+        2,
+        1,
+        1,
+        3
+      ]
+    ]
+  },
+  "cases": 7290,
+  "feasible": 3204,
+  "infeasible": 4086,
+  "states": 120376,
+  "edges": 320796,
+  "max_states_per_case": 46,
+  "max_edges_per_case": 160,
+  "oracle_branch_visits": 27570,
+  "oracle_complete_plans": 10344,
+  "producer_checker_oracle_agree": true,
+  "by_footprint_assignment": {
+    "0": {
+      "cases": 2430,
+      "feasible": 2052,
+      "infeasible": 378
+    },
+    "1": {
+      "cases": 2430,
+      "feasible": 792,
+      "infeasible": 1638
+    },
+    "2": {
+      "cases": 2430,
+      "feasible": 360,
+      "infeasible": 2070
+    }
+  },
+  "wall_seconds": 5.5566829039999845,
+  "timing_policy": "observational only; excluded from deterministic reproduction equality"
+}

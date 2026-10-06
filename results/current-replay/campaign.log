@@ -1,0 +1,143 @@
+{
+  "accepted_certificates": 166,
+  "accepted_feasible": 158,
+  "accepted_infeasible": 8,
+  "cpu_seconds": 0.34563028,
+  "peak_rss_kib": 14864,
+  "bibliography_audit": {
+    "references": 67,
+    "unique_keys": 67,
+    "unique_titles": 67,
+    "unique_stable_locators": 67,
+    "doi_locators": 49,
+    "arxiv_locators": 13,
+    "official_or_other_locators": 5,
+    "all_marked_cited": true,
+    "source_bytes_redistributed": false,
+    "pinned_first_party_records": [
+      "glow",
+      "piperench",
+      "tiramisu"
+    ],
+    "offline_gate_not_live_source_verification": true
+  }
+}
+{
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.8183259709999788
+    },
+    {
+      "command": [
+        "python",
+        "verify_bibliography.py"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.03196065299999873
+    },
+    {
+      "command": [
+        "python",
+        "freeze_inputs.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.06386013399998092
+    },
+    {
+      "command": [
+        "python",
+        "pilot.py",
+        "--out",
+        "<fresh-output>"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.11401861800001711
+    },
+    {
+      "command": [
+        "python",
+        "run.py",
+        "--out",
+        "<fresh-output>",
+        "--start",
+        "0",
+        "--stop",
+        "64"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.26470613099999696
+    },
+    {
+      "command": [
+        "python",
+        "run.py",
+        "--out",
+        "<fresh-output>",
+        "--start",
+        "64",
+        "--stop",
+        "166"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.8663995409999927
+    },
+    {
+      "command": [
+        "python",
+        "summarize.py",
+        "--out",
+        "<fresh-output>"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.518048897
+    },
+    {
+      "command": [
+        "python",
+        "exhaustive_audit.py",
+        "--out",
+        "<fresh-output>/exhaustive-audit.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 5.628473258000014
+    }
+  ],
+  "deterministic_results_equal": true,
+  "compared_result_files": [
+    "chunk-0-64.json",
+    "chunk-64-166.json",
+    "summary.json",
+    "mutations.json",
+    "abstraction-ablation.json",
+    "semantic-differential.json",
+    "exhaustive-audit.json",
+    "pilot.json",
+    "family-costs.csv",
+    "interval-costs.csv",
+    "schedule-costs.csv",
+    "abstraction-ablation.csv",
+    "footprint-costs.csv",
+    "boundary-flush-certificate.json",
+    "boundary-retain-certificate.json",
+    "pilot-fork-join-certificate.json",
+    "schedule-4-1-40-certificate.json",
+    "footprint-identity-certificate.json"
+  ],
+  "compared_certificates": 166,
+  "workers": 1,
+  "child_cpu_seconds": 9.552515,
+  "child_peak_rss_kib": 29620,
+  "wall_seconds": 10.356610732999997,
+  "timing_policy": "CPU, wall-time, and RSS fields are observational and excluded from equality; all scientific fields and certificate objects are compared"
+}

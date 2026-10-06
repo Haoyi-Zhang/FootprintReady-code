@@ -1,0 +1,7 @@
+family,sealed,fixed,flush,retain,flush_states
+chain,123,53,53,53,38
+diamond,149,67,67,67,110
+residual,149,67,67,67,62
+shared,156,68,68,68,72
+wide,149,95,73,73,240
+fanin,147,97,97,91,116

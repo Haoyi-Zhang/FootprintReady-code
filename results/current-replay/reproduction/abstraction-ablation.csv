@@ -1,0 +1,9 @@
+projection,certificates,represented_states,abstract_groups,merged_groups,ambiguous_groups,finite_cost_ambiguous_groups,mixed_live_dead_groups,states_in_ambiguous_groups,cases_with_ambiguity,max_finite_spread
+full,166,13570,13570,0,0,0,0,0,0,0
+without_done,166,13570,7986,2546,2493,2493,0,7999,146,323
+completion_count_only,166,13570,12296,1032,482,482,0,1146,49,105
+without_mode,166,13570,6884,6686,3517,3517,0,7034,135,76
+without_dirty_identity,166,13570,12866,648,153,153,0,338,16,32
+without_dirty_state,166,13570,8180,4080,936,936,0,2192,152,32
+occupancy_only,166,13570,9668,2810,661,661,0,1843,44,50
+footprint_totals_only,166,13570,9762,2716,591,591,0,1703,35,14

@@ -1,0 +1,659 @@
+{
+  "scope": "complete accepted certificate closures for the frozen ready-set batch; ambiguity means a projection merges represented legal states with different exact continuation labels",
+  "projections": [
+    {
+      "projection": "full",
+      "certificates": 166,
+      "represented_states": 13570,
+      "abstract_groups": 13570,
+      "merged_groups": 0,
+      "ambiguous_groups": 0,
+      "finite_cost_ambiguous_groups": 0,
+      "mixed_live_dead_groups": 0,
+      "states_in_ambiguous_groups": 0,
+      "cases_with_ambiguity": 0,
+      "max_finite_spread": 0
+    },
+    {
+      "projection": "without_done",
+      "certificates": 166,
+      "represented_states": 13570,
+      "abstract_groups": 7986,
+      "merged_groups": 2546,
+      "ambiguous_groups": 2493,
+      "finite_cost_ambiguous_groups": 2493,
+      "mixed_live_dead_groups": 0,
+      "states_in_ambiguous_groups": 7999,
+      "cases_with_ambiguity": 146,
+      "max_finite_spread": 323
+    },
+    {
+      "projection": "completion_count_only",
+      "certificates": 166,
+      "represented_states": 13570,
+      "abstract_groups": 12296,
+      "merged_groups": 1032,
+      "ambiguous_groups": 482,
+      "finite_cost_ambiguous_groups": 482,
+      "mixed_live_dead_groups": 0,
+      "states_in_ambiguous_groups": 1146,
+      "cases_with_ambiguity": 49,
+      "max_finite_spread": 105
+    },
+    {
+      "projection": "without_mode",
+      "certificates": 166,
+      "represented_states": 13570,
+      "abstract_groups": 6884,
+      "merged_groups": 6686,
+      "ambiguous_groups": 3517,
+      "finite_cost_ambiguous_groups": 3517,
+      "mixed_live_dead_groups": 0,
+      "states_in_ambiguous_groups": 7034,
+      "cases_with_ambiguity": 135,
+      "max_finite_spread": 76
+    },
+    {
+      "projection": "without_dirty_identity",
+      "certificates": 166,
+      "represented_states": 13570,
+      "abstract_groups": 12866,
+      "merged_groups": 648,
+      "ambiguous_groups": 153,
+      "finite_cost_ambiguous_groups": 153,
+      "mixed_live_dead_groups": 0,
+      "states_in_ambiguous_groups": 338,
+      "cases_with_ambiguity": 16,
+      "max_finite_spread": 32
+    },
+    {
+      "projection": "without_dirty_state",
+      "certificates": 166,
+      "represented_states": 13570,
+      "abstract_groups": 8180,
+      "merged_groups": 4080,
+      "ambiguous_groups": 936,
+      "finite_cost_ambiguous_groups": 936,
+      "mixed_live_dead_groups": 0,
+      "states_in_ambiguous_groups": 2192,
+      "cases_with_ambiguity": 152,
+      "max_finite_spread": 32
+    },
+    {
+      "projection": "occupancy_only",
+      "certificates": 166,
+      "represented_states": 13570,
+      "abstract_groups": 9668,
+      "merged_groups": 2810,
+      "ambiguous_groups": 661,
+      "finite_cost_ambiguous_groups": 661,
+      "mixed_live_dead_groups": 0,
+      "states_in_ambiguous_groups": 1843,
+      "cases_with_ambiguity": 44,
+      "max_finite_spread": 50
+    },
+    {
+      "projection": "footprint_totals_only",
+      "certificates": 166,
+      "represented_states": 13570,
+      "abstract_groups": 9762,
+      "merged_groups": 2716,
+      "ambiguous_groups": 591,
+      "finite_cost_ambiguous_groups": 591,
+      "mixed_live_dead_groups": 0,
+      "states_in_ambiguous_groups": 1703,
+      "cases_with_ambiguity": 35,
+      "max_finite_spread": 14
+    }
+  ],
+  "witnesses": {
+    "full": null,
+    "without_done": {
+      "score": [
+        0,
+        323,
+        4,
+        4
+      ],
+      "case": "footprint-shared-0-40",
+      "projection_key": [
+        1,
+        2,
+        0
+      ],
+      "labels": [
+        51,
+        191,
+        226,
+        374
+      ],
+      "members": [
+        {
+          "done_mask": 7,
+          "done_nodes": [
+            0,
+            1,
+            2
+          ],
+          "mode": 1,
+          "resident_mask": 2,
+          "resident": [
+            "w"
+          ],
+          "dirty_mask": 0,
+          "dirty": [],
+          "resident_units": 3,
+          "dirty_units": 0,
+          "continuation_upper": 51
+        },
+        {
+          "done_mask": 3,
+          "done_nodes": [
+            0,
+            1
+          ],
+          "mode": 1,
+          "resident_mask": 2,
+          "resident": [
+            "w"
+          ],
+          "dirty_mask": 0,
+          "dirty": [],
+          "resident_units": 3,
+          "dirty_units": 0,
+          "continuation_upper": 191
+        },
+        {
+          "done_mask": 1,
+          "done_nodes": [
+            0
+          ],
+          "mode": 1,
+          "resident_mask": 2,
+          "resident": [
+            "w"
+          ],
+          "dirty_mask": 0,
+          "dirty": [],
+          "resident_units": 3,
+          "dirty_units": 0,
+          "continuation_upper": 226
+        },
+        {
+          "done_mask": 0,
+          "done_nodes": [],
+          "mode": 1,
+          "resident_mask": 2,
+          "resident": [
+            "w"
+          ],
+          "dirty_mask": 0,
+          "dirty": [],
+          "resident_units": 3,
+          "dirty_units": 0,
+          "continuation_upper": 374
+        }
+      ]
+    },
+    "completion_count_only": {
+      "score": [
+        0,
+        105,
+        2,
+        2
+      ],
+      "case": "footprint-diamond-0-40",
+      "projection_key": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "labels": [
+        128,
+        233
+      ],
+      "members": [
+        {
+          "done_mask": 2,
+          "done_nodes": [
+            1
+          ],
+          "mode": 0,
+          "resident_mask": 0,
+          "resident": [],
+          "dirty_mask": 0,
+          "dirty": [],
+          "resident_units": 0,
+          "dirty_units": 0,
+          "continuation_upper": 128
+        },
+        {
+          "done_mask": 1,
+          "done_nodes": [
+            0
+          ],
+          "mode": 0,
+          "resident_mask": 0,
+          "resident": [],
+          "dirty_mask": 0,
+          "dirty": [],
+          "resident_units": 0,
+          "dirty_units": 0,
+          "continuation_upper": 233
+        }
+      ]
+    },
+    "without_mode": {
+      "score": [
+        0,
+        76,
+        2,
+        2
+      ],
+      "case": "footprint-shared-0-40",
+      "projection_key": [
+        7,
+        18,
+        0
+      ],
+      "labels": [
+        33,
+        109
+      ],
+      "members": [
+        {
+          "done_mask": 7,
+          "done_nodes": [
+            0,
+            1,
+            2
+          ],
+          "mode": 1,
+          "resident_mask": 18,
+          "resident": [
+            "w",
+            "v2"
+          ],
+          "dirty_mask": 0,
+          "dirty": [],
+          "resident_units": 6,
+          "dirty_units": 0,
+          "continuation_upper": 33
+        },
+        {
+          "done_mask": 7,
+          "done_nodes": [
+            0,
+            1,
+            2
+          ],
+          "mode": 0,
+          "resident_mask": 18,
+          "resident": [
+            "w",
+            "v2"
+          ],
+          "dirty_mask": 0,
+          "dirty": [],
+          "resident_units": 6,
+          "dirty_units": 0,
+          "continuation_upper": 109
+        }
+      ]
+    },
+    "without_dirty_identity": {
+      "score": [
+        0,
+        32,
+        2,
+        2
+      ],
+      "case": "footprint-identity",
+      "projection_key": [
+        11,
+        1,
+        36,
+        1
+      ],
+      "labels": [
+        56,
+        88
+      ],
+      "members": [
+        {
+          "done_mask": 11,
+          "done_nodes": [
+            0,
+            1,
+            3
+          ],
+          "mode": 1,
+          "resident_mask": 36,
+          "resident": [
+            "v0",
+            "v3"
+          ],
+          "dirty_mask": 4,
+          "dirty": [
+            "v0"
+          ],
+          "resident_units": 7,
+          "dirty_units": 3,
+          "continuation_upper": 56
+        },
+        {
+          "done_mask": 11,
+          "done_nodes": [
+            0,
+            1,
+            3
+          ],
+          "mode": 1,
+          "resident_mask": 36,
+          "resident": [
+            "v0",
+            "v3"
+          ],
+          "dirty_mask": 32,
+          "dirty": [
+            "v3"
+          ],
+          "resident_units": 7,
+          "dirty_units": 4,
+          "continuation_upper": 88
+        }
+      ]
+    },
+    "without_dirty_state": {
+      "score": [
+        0,
+        32,
+        2,
+        3
+      ],
+      "case": "footprint-identity",
+      "projection_key": [
+        11,
+        1,
+        36
+      ],
+      "labels": [
+        56,
+        88
+      ],
+      "members": [
+        {
+          "done_mask": 11,
+          "done_nodes": [
+            0,
+            1,
+            3
+          ],
+          "mode": 1,
+          "resident_mask": 36,
+          "resident": [
+            "v0",
+            "v3"
+          ],
+          "dirty_mask": 0,
+          "dirty": [],
+          "resident_units": 7,
+          "dirty_units": 0,
+          "continuation_upper": 56
+        },
+        {
+          "done_mask": 11,
+          "done_nodes": [
+            0,
+            1,
+            3
+          ],
+          "mode": 1,
+          "resident_mask": 36,
+          "resident": [
+            "v0",
+            "v3"
+          ],
+          "dirty_mask": 4,
+          "dirty": [
+            "v0"
+          ],
+          "resident_units": 7,
+          "dirty_units": 3,
+          "continuation_upper": 56
+        },
+        {
+          "done_mask": 11,
+          "done_nodes": [
+            0,
+            1,
+            3
+          ],
+          "mode": 1,
+          "resident_mask": 36,
+          "resident": [
+            "v0",
+            "v3"
+          ],
+          "dirty_mask": 32,
+          "dirty": [
+            "v3"
+          ],
+          "resident_units": 7,
+          "dirty_units": 4,
+          "continuation_upper": 88
+        }
+      ]
+    },
+    "occupancy_only": {
+      "score": [
+        0,
+        50,
+        2,
+        2
+      ],
+      "case": "footprint-identity",
+      "projection_key": [
+        11,
+        1,
+        1,
+        1
+      ],
+      "labels": [
+        56,
+        106
+      ],
+      "members": [
+        {
+          "done_mask": 11,
+          "done_nodes": [
+            0,
+            1,
+            3
+          ],
+          "mode": 1,
+          "resident_mask": 4,
+          "resident": [
+            "v0"
+          ],
+          "dirty_mask": 4,
+          "dirty": [
+            "v0"
+          ],
+          "resident_units": 3,
+          "dirty_units": 3,
+          "continuation_upper": 56
+        },
+        {
+          "done_mask": 11,
+          "done_nodes": [
+            0,
+            1,
+            3
+          ],
+          "mode": 1,
+          "resident_mask": 32,
+          "resident": [
+            "v3"
+          ],
+          "dirty_mask": 32,
+          "dirty": [
+            "v3"
+          ],
+          "resident_units": 4,
+          "dirty_units": 4,
+          "continuation_upper": 106
+        }
+      ]
+    },
+    "footprint_totals_only": {
+      "score": [
+        0,
+        14,
+        3,
+        6
+      ],
+      "case": "random-00",
+      "projection_key": [
+        11,
+        0,
+        2,
+        1
+      ],
+      "labels": [
+        7,
+        13,
+        21
+      ],
+      "members": [
+        {
+          "done_mask": 11,
+          "done_nodes": [
+            0,
+            1,
+            3
+          ],
+          "mode": 0,
+          "resident_mask": 12,
+          "resident": [
+            "v0",
+            "v1"
+          ],
+          "dirty_mask": 4,
+          "dirty": [
+            "v0"
+          ],
+          "resident_units": 2,
+          "dirty_units": 1,
+          "continuation_upper": 7
+        },
+        {
+          "done_mask": 11,
+          "done_nodes": [
+            0,
+            1,
+            3
+          ],
+          "mode": 0,
+          "resident_mask": 12,
+          "resident": [
+            "v0",
+            "v1"
+          ],
+          "dirty_mask": 8,
+          "dirty": [
+            "v1"
+          ],
+          "resident_units": 2,
+          "dirty_units": 1,
+          "continuation_upper": 7
+        },
+        {
+          "done_mask": 11,
+          "done_nodes": [
+            0,
+            1,
+            3
+          ],
+          "mode": 0,
+          "resident_mask": 36,
+          "resident": [
+            "v0",
+            "v3"
+          ],
+          "dirty_mask": 4,
+          "dirty": [
+            "v0"
+          ],
+          "resident_units": 2,
+          "dirty_units": 1,
+          "continuation_upper": 13
+        },
+        {
+          "done_mask": 11,
+          "done_nodes": [
+            0,
+            1,
+            3
+          ],
+          "mode": 0,
+          "resident_mask": 40,
+          "resident": [
+            "v1",
+            "v3"
+          ],
+          "dirty_mask": 8,
+          "dirty": [
+            "v1"
+          ],
+          "resident_units": 2,
+          "dirty_units": 1,
+          "continuation_upper": 13
+        },
+        {
+          "done_mask": 11,
+          "done_nodes": [
+            0,
+            1,
+            3
+          ],
+          "mode": 0,
+          "resident_mask": 36,
+          "resident": [
+            "v0",
+            "v3"
+          ],
+          "dirty_mask": 32,
+          "dirty": [
+            "v3"
+          ],
+          "resident_units": 2,
+          "dirty_units": 1,
+          "continuation_upper": 21
+        },
+        {
+          "done_mask": 11,
+          "done_nodes": [
+            0,
+            1,
+            3
+          ],
+          "mode": 0,
+          "resident_mask": 40,
+          "resident": [
+            "v1",
+            "v3"
+          ],
+          "dirty_mask": 32,
+          "dirty": [
+            "v3"
+          ],
+          "resident_units": 2,
+          "dirty_units": 1,
+          "continuation_upper": 21
+        }
+      ]
+    }
+  }
+}

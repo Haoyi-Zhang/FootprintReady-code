@@ -1,0 +1,14 @@
+case,retain,cfg,capacity,upper,status,states,edges
+footprint-chain-0-9,0,9,6,168,feasible,21,40
+footprint-chain-0-40,0,40,6,261,feasible,21,40
+footprint-chain-1-9,1,9,6,84,feasible,26,55
+footprint-chain-1-40,1,40,6,177,feasible,26,55
+footprint-diamond-0-9,0,9,7,152,feasible,47,133
+footprint-diamond-0-40,0,40,7,245,feasible,47,133
+footprint-diamond-1-9,1,9,7,96,feasible,60,182
+footprint-diamond-1-40,1,40,7,189,feasible,60,182
+footprint-shared-0-9,0,9,8,241,feasible,40,114
+footprint-shared-0-40,0,40,8,334,feasible,40,114
+footprint-shared-1-9,1,9,8,121,feasible,48,145
+footprint-shared-1-40,1,40,8,214,feasible,48,145
+footprint-identity,1,9,7,97,feasible,130,426
