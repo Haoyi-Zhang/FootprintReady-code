@@ -135,6 +135,19 @@ importing the producer and also invokes that bibliography audit.
 
 Only wall time, CPU time, and peak RSS are excluded from deterministic equality.
 
+The frozen-input gate compares exact UTF-8 bytes, including line endings. The
+producer and checker require integer dimensions for the fixed logical tile type.
+Memoized model queries belong to each parsed instance rather than a process-global
+cache; the focused regressions check that completed instances are collectible and
+that independently parsed graphs do not share cached readiness answers.
+
+`scientific-checks.yml` runs the archived certificate gate and fresh reproduction
+from the standalone artifact repository root on pushes to `main` or manual
+dispatch. Its Ubuntu 24.04 job bounds the whole scientific command block to 300
+seconds and 2 GiB of virtual memory, propagates failed gates, and uploads available
+raw outputs even when a check fails. The existing material-integrity workflow
+remains separate. Workflow configuration is not evidence of a successful remote run.
+
 Manual bounded commands are:
 
 ```sh

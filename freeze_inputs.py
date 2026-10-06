@@ -33,13 +33,13 @@ def main():
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     target = ROOT / "inputs" / "validation-cases.json"
-    expected = serialized()
+    expected = serialized().encode("utf-8")
     if args.check:
-        if target.read_text(encoding="utf-8") != expected:
+        if target.read_bytes() != expected:
             raise SystemExit("frozen validation input differs from deterministic constructor")
         print(f"verified {len(payload())} frozen cases")
     else:
-        target.write_text(expected, encoding="utf-8")
+        target.write_bytes(expected)
         print(f"wrote {len(payload())} cases to {target.relative_to(ROOT)}")
 
 

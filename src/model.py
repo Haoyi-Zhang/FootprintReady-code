@@ -37,7 +37,11 @@ class Model:
             raise InvalidModel("model fields")
         if not isinstance(obj["name"], str) or not obj["name"]:
             raise InvalidModel("name")
-        if obj["tile_type"] != {"dtype": "int16", "shape": [4, 4]}:
+        tile = obj["tile_type"]
+        if (type(tile) is not dict or set(tile) != {"dtype", "shape"} or
+                tile["dtype"] != "int16" or type(tile["shape"]) is not list or
+                len(tile["shape"]) != 2 or
+                any(type(dimension) is not int or dimension != 4 for dimension in tile["shape"])):
             raise InvalidModel("this fragment has uniform int16[4,4] tiles")
 
         ins, nodes, outs = obj["inputs"], obj["nodes"], obj["outputs"]
@@ -121,6 +125,10 @@ class Model:
             raise InvalidModel("interval bounds must be ordered nonnegative integers")
         self.capacity, self.retain, self.bounds = caps, retain, bounds
         self.footprint = footprint
+        # Cache only within this fixed instance. Class-level cached methods keep
+        # every prior Model alive across a multi-instance finite campaign.
+        for method in ("occupied", "available", "live", "ready"):
+            setattr(self, method, lru_cache(maxsize=None)(getattr(self, method)))
 
     def mask(self, values) -> int:
         result = 0
@@ -128,11 +136,9 @@ class Model:
             result |= self.bits[value]
         return result
 
-    @lru_cache(maxsize=None)
     def occupied(self, mask: int) -> int:
         return sum(self.footprint[value] for value in self.names if mask & self.bits[value])
 
-    @lru_cache(maxsize=None)
     def available(self, done: int) -> int:
         result = self.input_mask
         for j, bit in enumerate(self.node_output_masks):
@@ -140,7 +146,6 @@ class Model:
                 result |= bit
         return result
 
-    @lru_cache(maxsize=None)
     def live(self, done: int) -> int:
         """Produced values needed by an output or at least one unfinished node."""
         needed = self.output_mask
@@ -149,7 +154,6 @@ class Model:
                 needed |= arg_mask
         return self.available(done) & needed
 
-    @lru_cache(maxsize=None)
     def ready(self, done: int) -> tuple[int, ...]:
         return tuple(
             j for j, deps in enumerate(self.dep_masks)

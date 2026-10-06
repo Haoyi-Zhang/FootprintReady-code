@@ -148,19 +148,20 @@ class Semantics:
                 value[0] <= value[1] for value in self.bounds.values()),
             "interval endpoints must be ordered nonnegative integers",
         )
+        # Each parsed instance owns its memoized sets; completed checks must not
+        # remain reachable through a process-global method cache.
+        for method in ("done_nodes", "available", "live", "ready"):
+            setattr(self, method, lru_cache(maxsize=None)(getattr(self, method)))
 
-    @lru_cache(maxsize=None)
     def done_nodes(self, done):
         return frozenset(j for j in range(self.N) if done & (1 << j))
 
-    @lru_cache(maxsize=None)
     def available(self, done):
         values = set(self.inputs)
         for j in self.done_nodes(done):
             values.add(self.nodes[j]["out"])
         return frozenset(values)
 
-    @lru_cache(maxsize=None)
     def live(self, done):
         needed = set(self.outputs)
         for j, node in enumerate(self.nodes):
@@ -168,7 +169,6 @@ class Semantics:
                 needed.update(node["args"])
         return frozenset(set(self.available(done)) & needed)
 
-    @lru_cache(maxsize=None)
     def ready(self, done):
         finished = self.done_nodes(done)
         return tuple(

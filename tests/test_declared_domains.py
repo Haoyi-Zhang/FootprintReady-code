@@ -2,7 +2,12 @@
 from __future__ import annotations
 
 import copy
+import sys
 import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
 
 from baseline import solve_sealed
 from checker import CheckError, Semantics, check, check_trace
@@ -37,6 +42,18 @@ def unary_instance(*, modes: int = 1) -> dict:
 
 
 class DeclaredDomainTests(unittest.TestCase):
+    def test_tile_dimensions_have_the_same_integer_domain_in_both_parsers(self):
+        for shape in ([4.0, 4], [4, 4.0]):
+            with self.subTest(shape=shape):
+                instance = unary_instance()
+                instance["tile_type"]["shape"] = shape
+                with self.assertRaisesRegex(InvalidModel, "int16"):
+                    Model(copy.deepcopy(instance))
+                with self.assertRaisesRegex(CheckError, "tile type"):
+                    Semantics(copy.deepcopy(instance))
+        Model(unary_instance())
+        Semantics(unary_instance())
+
     def test_half_unit_operator_interval_is_outside_executable_domain(self):
         instance = unary_instance()
         instance["bounds"]["op.unary.0"] = [0.5, 0.5]
