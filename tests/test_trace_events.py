@@ -50,6 +50,23 @@ def owned_cases():
 
 
 class TraceEventTests(unittest.TestCase):
+    def test_selected_events_without_a_second_successor_pass(self):
+        calls = []
+        class ObservedModel(Model):
+            def successors(self, state):
+                calls.append(state)
+                yield from super().successors(state)
+        for instance in owned_cases():
+            calls.clear()
+            with patch.object(planner, 'Model', ObservedModel):
+                result = planner.solve(instance)
+            self.assertEqual(len(calls), result['states'])
+            self.assertEqual(len(set(calls)), result['states'])
+            self.assertTrue(check(instance, result['certificate'])['accepted'])
+            if result['feasible']:
+                self.assertEqual(result['certificate']['counts'],
+                                 definition_counts(instance, result['certificate']['trace']))
+
     def test_definition_and_independent_bounded_optimum(self):
         for instance in owned_cases():
             before = deepcopy(instance)

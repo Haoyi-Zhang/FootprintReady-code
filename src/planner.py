@@ -16,6 +16,27 @@ class SearchLimit(RuntimeError):
     pass
 
 
+def _trace_events(model: Model, state, action: list) -> dict:
+    """Recount an already selected legal edge without enumerating alternatives."""
+    kind, item = action
+    if kind == 'load':
+        units = model.footprint[item]
+        return {'dram_read': units, 'sp_write': units}
+    if kind == 'store':
+        units = model.footprint[item]
+        return {'sp_read': units, 'dram_write': units}
+    if kind == 'drop':
+        return {}
+    if kind == 'switch':
+        return {f'cfg.{state.mode}.{item}': 1}
+    if kind == 'run':
+        node = model.nodes[item]
+        return {f"op.{node['op']}.{state.mode}": 1,
+                'sp_read': sum(model.footprint[v] for v in node['args']),
+                'sp_write': model.footprint[node['out']]}
+    raise AssertionError('unknown selected trace action')
+
+
 def solve(obj: dict, state_limit: int = 120000, edge_limit: int = 1_200_000) -> dict:
     model = Model(obj)
     states = [model.initial()]
@@ -109,13 +130,10 @@ def solve(obj: dict, state_limit: int = 120000, edge_limit: int = 1_200_000) -> 
         if step is None:
             raise AssertionError("missing decreasing optimum witness")
         target, action, weight = step
-        # The fixed instance/state determines events. Retain only edge weights
-        # during closure; regenerate the selected trace edge without changing
-        # closure order, distance/hop ties, or the certificate event basis.
-        events = next((events for replay_action, destination, events
-                       in model.successors(states[index])
-                       if replay_action == action and destination == states[target]), None)
-        if events is None or model.cost(events, 1) != weight:
+        # Legality and destination come from the stored closure edge. Its event
+        # vector depends only on action, source mode and the fixed instance.
+        events = _trace_events(model, states[index], action)
+        if model.cost(events, 1) != weight:
             raise AssertionError("selected edge event replay disagrees with closure")
         trace.append(action)
         for event, count in events.items():

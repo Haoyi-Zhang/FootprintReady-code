@@ -1,7 +1,7 @@
 # Cross-Layer Energy Contracts
 
 This standalone repository implements the finite, footprint-aware ready-set
-machine studied in the companion internal manuscript.  It contains a certificate
+machine studied in the companion manuscript.  It contains a certificate
 producer, a representation-distinct checker, an independent small-instance
 oracle, restricted-policy baselines, deterministic inputs, proofs, tests,
 and archived results. The executable cost intervals have ordered nonnegative-
@@ -53,18 +53,17 @@ succinct.
 ## Frozen evidence
 
 The current producer stores each closure edge's successor, action and exact
-upper weight, not its event dictionary. It regenerates events only for chosen
-optimum trace edges from the same fixed instance/state, checking the recorded
-weight before recounting. Full closure, reverse distances, zero-cost hop ties,
+upper weight, not its event dictionary. Selected trace events are computed
+directly from the stored action, source mode and fixed footprint map; the upper
+weight is checked before recounting. Alternative successors are not enumerated
+again for the trace. Full closure, reverse distances, zero-cost hop ties,
 certificate fields and the independent checker/oracle/baselines are unchanged.
-This removes per-edge retained event maps but adds trace-only enumeration; it is
-not a measured time/peak-memory or physical-energy gain. Three portable finite
-regressions in `tests/test_trace_events.py` compare independent event definitions
-and the small normal-form oracle, preserve zero-cost ties/ceiling errors, and
-observe event-map lifetime. Ordinary test discovery includes them (14 current
-methods; the retained pre-change suite has11). The Linux full reproduction below
-remains necessary for a new complete campaign; frozen measurements/receipts
-remain tied to the original producer before trace-only event regeneration.
+Four portable regressions in `tests/test_trace_events.py` compare separate event
+definitions and the small normal-form oracle, preserve zero-cost ties and ceiling
+errors, check event-map lifetime, and require one successor pass per closure
+state. Ordinary discovery runs 15 methods. These checks do not measure elapsed
+time, peak bytes or physical energy. Archived performance diagnostics retain
+their original source boundary; the full reproduction command is given below.
 
 The prespecified validation batch contains **166 synthetic instances**: 158
 feasible and eight infeasible.  It includes 13 nonuniform-footprint cases.  All
