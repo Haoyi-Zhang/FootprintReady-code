@@ -20,7 +20,7 @@ def solve(obj: dict, state_limit: int = 120000, edge_limit: int = 1_200_000) -> 
     model = Model(obj)
     states = [model.initial()]
     ids = {states[0]: 0}
-    edges: list[list[tuple[int, list, dict, int]]] = [[]]
+    edges: list[list[tuple[int, list, int]]] = [[]]
     reverse: list[list[tuple[int, int]]] = [[]]
     edge_count = 0
 
@@ -36,7 +36,7 @@ def solve(obj: dict, state_limit: int = 120000, edge_limit: int = 1_200_000) -> 
                 reverse.append([])
             target = ids[destination]
             weight = model.cost(events, 1)
-            edges[cursor].append((target, action, events, weight))
+            edges[cursor].append((target, action, weight))
             reverse[target].append((cursor, weight))
             edge_count += 1
             if edge_count > edge_limit:
@@ -101,14 +101,22 @@ def solve(obj: dict, state_limit: int = 120000, edge_limit: int = 1_200_000) -> 
             (
                 edge for edge in edges[index]
                 if distance[edge[0]] is not None and
-                distance[index] == edge[3] + distance[edge[0]] and
+                distance[index] == edge[2] + distance[edge[0]] and
                 hops[index] == hops[edge[0]] + 1
             ),
             None,
         )
         if step is None:
             raise AssertionError("missing decreasing optimum witness")
-        target, action, events, _ = step
+        target, action, weight = step
+        # The fixed instance/state determines events. Retain only edge weights
+        # during closure; regenerate the selected trace edge without changing
+        # closure order, distance/hop ties, or the certificate event basis.
+        events = next((events for replay_action, destination, events
+                       in model.successors(states[index])
+                       if replay_action == action and destination == states[target]), None)
+        if events is None or model.cost(events, 1) != weight:
+            raise AssertionError("selected edge event replay disagrees with closure")
         trace.append(action)
         for event, count in events.items():
             counts[event] += count

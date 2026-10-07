@@ -52,6 +52,20 @@ succinct.
 
 ## Frozen evidence
 
+The current producer stores each closure edge's successor, action and exact
+upper weight, not its event dictionary. It regenerates events only for chosen
+optimum trace edges from the same fixed instance/state, checking the recorded
+weight before recounting. Full closure, reverse distances, zero-cost hop ties,
+certificate fields and the independent checker/oracle/baselines are unchanged.
+This removes per-edge retained event maps but adds trace-only enumeration; it is
+not a measured time/peak-memory or physical-energy gain. Three portable finite
+regressions in `tests/test_trace_events.py` compare independent event definitions
+and the small normal-form oracle, preserve zero-cost ties/ceiling errors, and
+observe event-map lifetime. Ordinary test discovery includes them (14 current
+methods; the retained pre-change suite has11). The Linux full reproduction below
+remains necessary for a new complete campaign; frozen measurements/receipts
+remain tied to the original producer before trace-only event regeneration.
+
 The prespecified validation batch contains **166 synthetic instances**: 158
 feasible and eight infeasible.  It includes 13 nonuniform-footprint cases.  All
 166 archived certificates are accepted by the standalone checker.  The
@@ -103,7 +117,9 @@ model-relative history erasure.
 The tested release environment is Linux x86_64 with CPython 3.13.5. The
 top-level `verify.py`, `reproduce.py`, `run.py`, `pilot.py`, and `summarize.py`
 drivers import the Unix-only standard-library `resource` module for CPU/RSS
-observations. Other Unix/Python variants are untested and Windows is unsupported.
+observations. Full reproduction is unsupported on Windows; the standalone
+standard-library unit tests, including the new bounded regressions, can run there.
+Other full-campaign Unix/Python variants are untested.
 No package installation, network access, GPU, model API, private data, external
 solver, or service is required.
 
