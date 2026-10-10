@@ -46,9 +46,12 @@ rejected.  Instance binding uses canonical structural equality.
 
 A feasible certificate contains an attained source-to-goal trace and a matching
 source lower bound.  An infeasible certificate labels the source `dead` and proves
-that deadness is successor closed while every goal is zero.  Checking remains
-linear in the explicitly listed closure; certificates are not claimed to be
-succinct.
+that deadness is successor closed while every goal is zero. The closure/label
+pass uses O(|S|+|E|) state and edge visits. Feasible-trace replay separately
+enumerates all outgoing transitions at each of its T visited states, including
+repeated visits: the combined count is O(|S|+|E|+T+sum_i d(s_i)). Parsing, bit
+arithmetic, and set/guard/dictionary costs are additional. Infeasible certificates
+have no trace term, and certificates are not claimed to be succinct.
 
 ## Frozen evidence
 

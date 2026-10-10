@@ -239,9 +239,14 @@ reach and fail to reach a goal, so the statuses are exclusive. This proof does n
 establish completeness for arbitrary real-valued endpoints. ∎
 
 The checker need not trust the producer's shortest-path implementation.  It does,
-however, reconstruct and source-traverse the whole represented closure, so
-checking is linear in the
-listed states and reconstructed edges rather than a succinct sublinear proof.
+however, reconstruct and source-traverse the whole represented closure. This
+closure/label pass takes O(|S|+|E|) state and edge visits, rather than providing a
+succinct sublinear proof. A feasible trace is checked in a separate pass which
+enumerates d(s_i) outgoing transitions at every action, including repeated states.
+For trace length T, the combined enumeration count is
+O(|S|+|E|+T+sum_i d(s_i)), or coarsely O(|S|+|E|+T(1+d_max)). Infeasible
+certificates have no trace term. These counts exclude parsing, bit arithmetic,
+and set/guard/dictionary costs; an accepted trace need not be simple.
 Python, the checker source, and the supplied model remain trusted.
 
 ## 6. Static footprints and identity-sensitive continuation
