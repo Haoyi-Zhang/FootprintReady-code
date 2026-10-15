@@ -86,8 +86,6 @@ footprint cases. Individual input files provide the worked pilot examples.
 `results/` retains raw chunks, all 166 certificates, pilot certificates,
 JSON/CSV summaries, semantic-differential and mutation records, exhaustive
 enumeration results, resource accounting and clean reproduction logs.
-`post_freeze_independence_audit.json` retains historical seed/coverage observations;
-its bookkeeping is separate from the deterministic certificate checks.
 The finite differential check covers 13,570 reachable states and 46,110 edges;
 the small oracle agrees on 90 cases. All 55 prescribed certificate/model
 mutations are rejected. The exhaustive two-node grammar, its 7,290 instances
